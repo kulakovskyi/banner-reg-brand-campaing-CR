@@ -7,6 +7,7 @@ $green-hover: #05b37c
 
 $font-suisse-bold: SuisseIntl-Bold, sans-serif //700
 $font-suisse-semb: SuisseIntl-SemiBold, sans-serif //600
+$font-suisse-med: SuisseIntl-Medium, sans-serif //500
 $font-wulkan: WulkanDisplay, sans-serif
 
 
@@ -20,6 +21,7 @@ body
   overscroll-behavior: none
   height: 100%
   display: flex
+
 .banner
   width: 50%
   height: 100vh
@@ -28,71 +30,96 @@ body
   position: relative
   overflow: hidden
   cursor: default
-  background: $blue url("../img/bg.jpg") no-repeat 50% 0/cover
-  padding: 360px 0 0 0
+  background: $blue url("../img/bg.jpg") no-repeat 50% bottom/contain
+  padding: 100px 0 0 0
   display: flex
   flex-direction: column
   align-items: center
   &__title
-    font-family: $font-suisse-bold
-    font-size: 120px
-    line-height: 110px
+    font-family: $font-suisse-semb
+    font-size: 72px
+    line-height: 90px
     text-align: center
-    letter-spacing: 0.04em
+    letter-spacing: 0.03em
     text-transform: uppercase
+    font-feature-settings: 'pnum' on, 'lnum' on
+    margin: 0 0 20px 0
     color: $grey
-    margin: 0 0 150px 0
     span
       font-family: $font-wulkan
-  &__info
-    position: relative
-    left: 119px
-    &-top
-      margin: 0 0 120px 0
-    &-bottom
-      position: relative
-      left: -100px
-    &-item
-      display: flex
-      .in
-        white-space: nowrap
-        font-family: $font-suisse-semb
-        font-size: 80px
-        line-height: 102px
-        text-align: center
-        letter-spacing: 0.01em
-        text-transform: uppercase
-        opacity: 0.35
-        -webkit-text-stroke-width: 3.2px
-        -webkit-text-stroke-color: $grey
-        color: transparent
-        margin: 0 41px 0 0
-      .bonus
-        margin: 0 41px 0 0
-        position: relative
-        &__top
-          white-space: nowrap
-          font-family: $font-suisse-semb
-          font-size: 80px
-          line-height: 102px
-          text-align: center
-          letter-spacing: 0.01em
-          text-transform: uppercase
-          color: $grey
-        &__bottom
+      color: $magenta
+  &__list
+    display: flex
+    align-items: center
+  &__item
+    &:not(:last-child)
+      margin: 0 40px 0 0
+    &:nth-child(1)
+      .banner__item-top
+        &::before
+          content: '5274,15 kn'
           position: absolute
-          bottom: -50px
-          left: 50%
-          transform: translateX(-50%)
-          white-space: nowrap
-          font-family: $font-suisse-semb
-          font-size: 49px
-          line-height: 64px
-          text-align: center
-          letter-spacing: 0.01em
+          z-index: 2
+          transform: rotate(-9.38deg)
+          bottom: 5px
+          right: 0
+          display: flex
+          align-items: center
+          justify-content: center
+          font-family: $font-suisse-med
+          width: 100px
+          height: 25px
+          font-size: 17px
+          line-height: 17px
+          letter-spacing: 0.02em
           text-transform: uppercase
           color: $grey
-          margin-top: -8px
+          background: $blue
+          border: 1.11961px solid $magenta
+          border-radius: 4.47843px
+    &:nth-child(3)
+      .banner__item-top
+        &::before
+          content: '226,04 kn'
+          position: absolute
+          z-index: 2
+          transform: rotate(-9.38deg)
+          bottom: 5px
+          right: 30px
+          display: flex
+          align-items: center
+          justify-content: center
+          font-family: $font-suisse-med
+          width: 100px
+          height: 25px
+          font-size: 17px
+          line-height: 17px
+          letter-spacing: 0.02em
+          text-transform: uppercase
+          color: $grey
+          background: $blue
+          border: 1.11961px solid $magenta
+          border-radius: 4.47843px
+    &-top
+      font-family: $font-suisse-med
+      position: relative
+      font-size: 80px
+      line-height: 104px
+      text-align: center
+      text-transform: uppercase
+      color: $magenta
+      margin: 0 0 10px 0
+    &-bottom
+      font-family: $font-suisse-med
+      font-size: 24px
+      line-height: 32px
+      color: $grey
+      text-align: center
+      letter-spacing: 0.02em
+      text-transform: uppercase
+
+
+
 
 
 
